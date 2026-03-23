@@ -13,7 +13,7 @@ stock INT NOT NULL DEFAULT 0,
 PRIMARY KEY (id)
 );
 
-INSERT INTO productos (id, nombre, descripcion, precio, img, stock) VALUES
+INSERT INTO PRODUCTOS (id, nombre, descripcion, precio, img, stock) VALUES
 (1, "Trolli Sour Worms", "Gominola ácida en forma de gusanos.", 66.20, "img/trolli-sour-worms.png",10),
 (2, "Twizzlers", "Regaliz dulce en tiras para compartir.", 47.66, "img/twizzlers.png",10),
 (3, "Gushers", "Snacks frutales con relleno líquido.", 52.96, "img/gushers.png",10),
