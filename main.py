@@ -24,7 +24,7 @@ def login():
         datos = request.json
         cursor = db.obtener_cursor()
         
-        sql = "SELECT * FROM usuarios WHERE username=%s AND password=%s"
+        sql = "SELECT * FROM USUARIOS WHERE username=%s AND userpass=%s"
         cursor.execute(sql, (datos['usuario'], datos['contrasena']))
         user = cursor.fetchone()
         
