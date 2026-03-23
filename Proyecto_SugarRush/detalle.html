@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Snack | SugarRush</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="img/logor.png" alt="Logo SugarRush" class="logo">
+            </a>
+            <nav>
+                <a href="index.html">Volver</a>
+                <a href="carrito.html">Mi Carrito</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="detalle-container" style="max-width: 900px; margin: 40px auto; display: flex; flex-wrap: wrap; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); gap: 20px;">
+        <div style="flex: 1; min-width: 280px; text-align: center;">
+            <img id="det-img" src="" alt="Snack" style="max-width: 100%; height: 300px; object-fit: contain; padding: 10px;">
+        </div>
+        
+        <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; justify-content: center;">
+            <h2 id="det-nombre" style="font-size: 28px; margin: 0 0 10px 0; font-family: var(--fuente-titulos);">Cargando</h2>
+            <p style="color: var(--turquesa); font-weight: bold; margin-bottom: 15px;">SNACK IMPORTADO</p>
+            
+            <p style="color: #444; margin-bottom: 20px; line-height: 1.5;">
+                <span id="det-desc"></span>
+            </p>
+            
+            <p id="det-precio" style="font-size: 26px; color: var(--naranja); font-weight: bold; margin-bottom: 20px;">L. 0.00</p>
+            
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <input type="number" id="input-cantidad" value="1" min="1" class="formulario__input" style="width: 70px; text-align: center;">
+                <button id="btn-agregar" class="formulario__btn" style="width: auto;">Agregar al Carrito</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SugarRush Imports</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Snack | SugarRush</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="img/logor.png" alt="Logo SugarRush" class="logo">
+            </a>
+        </div>
+    </header>
+
+    <form class="formulario">
+        <h2>Editar Información</h2>
+        
+        <div class="formulario__grupo">
+            <label class="formulario__label">Nombre</label>
+            <input type="text" id="edit-nom" class="formulario__input" value="Takis Fuego" required>
+        </div>
+        
+        <div class="formulario__grupo">
+            <label class="formulario__label">Descripción</label>
+            <textarea id="edit-desc" class="formulario__input" style="height: 80px; resize: none;" required>Chips enrollados muy picantes.</textarea>
+        </div>
+        
+        <div class="formulario__grupo">
+            <label class="formulario__label">Precio</label>
+            <input type="number" id="edit-pre" class="formulario__input" value="74.38" required>
+        </div>
+        
+        <div class="formulario__grupo">
+            <label class="formulario__label">Cambiar Imagen (.png, .jpg)</label>
+            <input type="file" id="edit-img" accept=".png, .jpg, .webp" class="formulario__input">
+        </div>
+        
+        <div class="formulario__grupo">
+            <label class="formulario__label">Estado Actual</label>
+            <select class="formulario__input">
+                <option selected>Activo</option>
+                <option>Inactivo</option>
+            </select>
+        </div>
+        
+        <button type="button" id="btn-edit-snack" class="formulario__btn">Actualizar Cambios</button>
+        <p style="text-align: center; margin-top: 15px;"><a href="producto.html" style="color: #444; text-decoration: none;">Cancelar</a></p>
+    </form>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
