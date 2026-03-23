@@ -17,7 +17,7 @@ class ConexionDB:
                 user=self.user,
                 password=self.password,
                 db=self.db,
-                cursorclass=pymysql.cursors.Cursor
+                cursorclass=pymysql.cursors.Cursor,
                 port=self.port
             )
         return self.conexion
