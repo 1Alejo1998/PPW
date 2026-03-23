@@ -20,19 +20,22 @@
         </div>
     </header>
 
-    <form class="formulario">
+    <form class="formulario" onsubmit="iniciarSesion(event)">
         <h2>Acceso al Panel</h2>
+        
         <div class="formulario__grupo">
             <label class="formulario__label">Usuario</label>
-            <input type="text" class="formulario__input" required>
+            <input type="text" id="usuario" class="formulario__input" required>
         </div>
+        
         <div class="formulario__grupo">
             <label class="formulario__label">Contraseña</label>
-            <input type="password" class="formulario__input" required>
+            <input type="password" id="password" class="formulario__input" required>
         </div>
-        <button type="button" class="formulario__btn" onclick="location.href='producto.html'">Ingresar</button>
+        
+        <button type="submit" class="formulario__btn">Ingresar</button>
     </form>
 
-    <script src="js/app.js"></script>
+    <script src="js/login.js"></script>
 </body>
 </html>
