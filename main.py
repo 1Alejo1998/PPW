@@ -35,7 +35,7 @@ def login():
         return jsonify({"mensaje": "Error de credenciales", "exito": False}), 401
         
     except Exception as e:
-        return jsonify({"mensaje": "Error de servidor", "error": str(e)}), 500
+        return jsonify({"mensaje": "Verifique sus credenciales", "error": str(e)}), 500
 
 
 
