@@ -1,6 +1,6 @@
 
 
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://ppw-production-65be.up.railway.app";
 
 window.onload = async function () {
     console.log("Iniciando SugarRush...");

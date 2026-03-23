@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             
             try {
-                const response = await fetch('http://127.0.0.1:5000/productos', {
+                const response = await fetch('https://ppw-production-65be.up.railway.app/productos', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(nuevoProducto)
