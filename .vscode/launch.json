@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Open index.html",
-            "file": "c:\\Users\\USER\\Downloads\\Proyecto_SugarRush_Grupo 5 (1)\\Proyecto_SugarRush_Grupo 5\\Proyecto_SugarRush\\index.html"
+            "file": "c:\\Users\\USER\\Desktop\\Proyecto_SugarRush\\index.html"
         }
     ]
 }
