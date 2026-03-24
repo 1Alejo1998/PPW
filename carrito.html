@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Carrito | SugarRush</title>
+    <title>Carrito | SugarRush</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,33 +15,30 @@
                 <img src="img/logor.png" alt="Logo SugarRush" class="logo">
             </a>
             <nav>
-                <a href="index.html">Inicio</a>
-                <a href="carrito.html">Carrito</a>
+                <a href="index.html">Seguir Comprando</a>
             </nav>
         </div>
     </header>
 
-    <main class="main-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-        <div style="grid-column: 1 / -1;">
-            <h2 style="font-family: var(--fuente-titulos);">Tu Carrito</h2>
+    <main class="main-container">
+        <h2 style="font-family: var(--fuente-titulos); margin-bottom: 20px;">Tu Carrito de Compras</h2>
+        
+        <div id="carrito-list">
         </div>
-        
-        <div id="carrito-list"></div>
-        
-        <div style="background: white; padding: 25px; border-radius: 10px; height: max-content; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-            <h3 style="margin-top: 0; font-family: var(--fuente-titulos);">Total Pagar</h3>
-            <div style="display: flex; justify-content: space-between; margin: 20px 0;">
-                <span>Total:</span>
-                <strong id="carrito-total" style="color: var(--naranja); font-size: 22px;">L. 0.00</strong>
-            </div>
-            <button class="formulario__btn">Pagar Ahora</button>
+
+        <div style="text-align: right; margin-top: 30px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <h3 style="margin-top: 0; font-family: var(--fuente-titulos);">Total: <span id="carrito-total" class="precio-txt" style="display: inline; margin-left: 10px;">L. 0.00</span></h3>
+            <a href="pagar.html" class="formulario__btn" style="width: auto; padding: 12px 30px; margin-top: 15px; font-size: 16px;">Proceder al Pago</a>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 SugarRush Imports</p>
+        <p style="text-align: center; color: white;">&copy; 2026 SugarRush. Todos los derechos reservados.</p>
     </footer>
 
     <script src="js/carrito.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', mostrarCarrito);
+    </script>
 </body>
 </html>

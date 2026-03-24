@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago | SugarRush</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="img/logor.png" alt="Logo SugarRush" class="logo">
+            </a>
+            <nav>
+                <a href="index.html">Inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <form class="formulario" id="form-pago">
+            <h2>Finalizar Compra</h2>
+            
+            <div style="text-align: center; margin-bottom: 20px;">
+                <p>Total a pagar:</p>
+                <span class="precio-txt" id="total-pago">L. 0.00</span>
+            </div>
+
+            <div class="formulario__grupo">
+                <label class="formulario__label">Nombre en la tarjeta</label>
+                <input type="text" class="formulario__input" required>
+            </div>
+
+            <div class="formulario__grupo">
+                <label class="formulario__label">Número de tarjeta</label>
+                <input type="text" class="formulario__input" pattern="\d{16}" title="Debe contener 16 dígitos" maxlength="16" required>
+            </div>
+
+            <div style="display: flex; gap: 15px;">
+                <div class="formulario__grupo" style="flex: 1;">
+                    <label class="formulario__label">Vencimiento</label>
+                    <input type="text" class="formulario__input" placeholder="MM/AA" maxlength="5" required>
+                </div>
+                <div class="formulario__grupo" style="flex: 1;">
+                    <label class="formulario__label">CVV</label>
+                    <input type="password" class="formulario__input" pattern="\d{3,4}" maxlength="4" required>
+                </div>
+            </div>
+
+            <div class="formulario__grupo">
+                <label class="formulario__label">Dirección de envío</label>
+                <textarea class="formulario__input" style="height: 60px; resize: none;" required></textarea>
+            </div>
+
+            <button type="submit" class="formulario__btn">Confirmar Pago</button>
+            <p style="text-align: center; margin-top: 15px;"><a href="index.html" style="color: #444; text-decoration: none;">Cancelar</a></p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SugarRush. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/pagar.js"></script>
+</body>
+</html>
