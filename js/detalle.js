@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 function mostrarError() {
     const tituloDetalle = document.getElementById('det-nombre');
     tituloDetalle.textContent = "Producto no encontrado";
-    document.getElementById('det-desc').textContent = "Lo sentimos, el snack que buscas no existe en Veldum.";
+    document.getElementById('det-desc').textContent = "Lo sentimos, el snack que buscas no existe en SugarRush.";
     document.getElementById('det-precio').textContent = "";
     document.getElementById('det-img').src = "img/default.png";
     document.getElementById('btn-agregar').style.display = "none";
