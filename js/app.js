@@ -1,16 +1,12 @@
 const API_URL = "https://ppw-production-65be.up.railway.app";
 
 window.onload = async function () {
-    console.log("Iniciando SugarRush...");
-
     let dbSnks = [];
     try {
         const res = await fetch(`${API_URL}/productos`);
         dbSnks = await res.json();
     } catch (err) {
-        console.error("Error al conectar con la API:", err);
     }
-
     const _galeria = document.getElementById('gridProductos');
     if (_galeria && dbSnks.length > 0) {
         _galeria.innerHTML = dbSnks.map(prod => `
@@ -22,7 +18,6 @@ window.onload = async function () {
                 <a href="detalle.html?id=${prod.id}" class="formulario__btn">Ver Detalle</a>
             </div>`).join('');
     }
-
     const tbObj = document.getElementById('tabla-inventario');
     if (tbObj && dbSnks.length > 0) {
         tbObj.innerHTML = dbSnks.map(q => `
@@ -31,7 +26,29 @@ window.onload = async function () {
                 <td>${q.nombre}</td>
                 <td>L. ${Number(q.precio).toFixed(2)}</td>
                 <td style="color:#00A69C;font-weight:bold;">Activo</td>
-                <td><a href="editarProducto.html?id=${q.id}" style="color:orange;">Editar</a></td>
+                <td>
+                    <a href="editarProducto.html?id=${q.id}" style="color:orange; text-decoration:none; margin-right:10px;">Editar</a>
+                    <button onclick="eliminarProducto(${q.id})" style="color:red; background:none; border:none; cursor:pointer; font-weight:bold;">Eliminar</button>
+                </td>
             </tr>`).join('');
     }
 };
+
+async function eliminarProducto(id) {
+    if (confirm("¿Estás seguro de que quieres eliminar este snack?")) {
+        try {
+            const res = await fetch(`${API_URL}/productos/${id}`, {
+                method: 'DELETE'
+            });
+            const data = await res.json();
+            if (data.exito) {
+                alert("Snack eliminado con éxito.");
+                location.reload(); 
+            } else {
+                alert("Error al eliminar: " + data.error);
+            }
+        } catch (error) {
+            alert("No se pudo conectar con el servidor.");
+        }
+    }
+}

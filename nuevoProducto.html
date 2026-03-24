@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header>
         <div class="nav-container">
             <a href="index.html">
@@ -16,30 +15,24 @@
             </a>
         </div>
     </header>
-
-    <form class="formulario">
+    <form class="formulario" onsubmit="guardarProducto(event)">
         <h2>Registrar Nuevo Snack</h2>
-        
         <div class="formulario__grupo">
             <label class="formulario__label">Nombre del Producto</label>
             <input type="text" id="add-nom" class="formulario__input" required>
         </div>
-        
         <div class="formulario__grupo">
             <label class="formulario__label">Descripción</label>
             <textarea id="add-desc" class="formulario__input" style="height: 80px; resize: none;" required></textarea>
         </div>
-        
         <div class="formulario__grupo">
             <label class="formulario__label">Precio Venta</label>
-            <input type="number" id="add-pre" class="formulario__input" required>
+            <input type="number" step="0.01" id="add-pre" class="formulario__input" required>
         </div>
-        
         <div class="formulario__grupo">
             <label class="formulario__label">Imagen (.png, .jpg)</label>
             <input type="file" id="add-img" accept=".png, .jpg, .webp" class="formulario__input" required>
         </div>
-        
         <div class="formulario__grupo">
             <label class="formulario__label">Estado</label>
             <select class="formulario__input">
@@ -47,12 +40,9 @@
                 <option>Inactivo</option>
             </select>
         </div>
-        
-        <button type="button" id="btn-save-snack" class="formulario__btn">Guardar Snack</button>
+        <button type="submit" class="formulario__btn">Guardar Snack</button>
         <p style="text-align: center; margin-top: 15px;"><a href="producto.html" style="color: #444; text-decoration: none;">Volver al listado</a></p>
     </form>
-
     <script src="js/Productos.js"></script>
-    
 </body>
 </html>

@@ -8,7 +8,7 @@ CORS(app)
 
 app.config['MYSQL_HOST'] = 'centerbeam.proxy.rlwy.net'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'sXmlsPxXtGVeUnARqAEesnCLbJVXPLxx'
+app.config['MYSQL_PASSWORD'] = 'Cheesecake'
 app.config['MYSQL_DB'] = 'BD_SUGARRUSH'
 
 db = ConexionDB(
@@ -36,7 +36,6 @@ def login():
         
     except Exception as e:
         return jsonify({"mensaje": "Verifique sus credenciales", "error": str(e)}), 500
-
 
 
 @app.route('/productos', methods=['GET'])
@@ -80,8 +79,44 @@ def agregar_producto():
         return jsonify({'error': str(e), 'exito': False}), 500
 
 
+@app.route('/productos/<int:id>', methods=['PUT'])
+def actualizar_producto(id):
+    try:
+        datos = request.json
+        cursor = db.obtener_cursor()
+        
+        sql = """UPDATE PRODUCTOS SET nombre =%s, descripcion= %s, precio= %s, img= %s, 
+                stock= %s WHERE id= %s"""
+        values = (datos['nombre'], datos['descripcion'], datos['precio'], datos['img'], datos['stock'], id)
+        cursor.execute(sql, values)
+        
+        db.conexion.commit()
+        cursor.close()
+        
+        return jsonify({'mensaje': 'Producto actualizado', 'exito': True}), 200
+        
+    except Exception as e:
+        return jsonify({'error': str(e), 'exito': False}), 500
+
+
+@app.route('/productos/<int:id>', methods=['DELETE'])
+def eliminar_producto(id):
+    try:
+        cursor = db.obtener_cursor()    
+        
+        sql="""DELETE FROM PRODUCTOS WHERE id=%s"""
+        # Se corrigió para que id viaje como tupla: (id,)
+        cursor.execute(sql, (id,))
+        
+        db.conexion.commit()
+        cursor.close()
+            
+        return jsonify({'mensaje': 'Producto eliminado', 'exito': True}), 200
+        
+    except Exception as e:
+        return jsonify({'error': str(e), 'exito': False}), 500
+
 
 if __name__ == '__main__':
     puerto = int(os.environ.get('PORT', 5000))
-    
     app.run(host='0.0.0.0', port=puerto, debug=True)
