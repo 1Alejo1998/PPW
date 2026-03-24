@@ -8,7 +8,7 @@ CORS(app)
 
 app.config['MYSQL_HOST'] = 'centerbeam.proxy.rlwy.net'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Cheesecake'
+app.config['MYSQL_PASSWORD'] = 'sXmlsPxXtGVeUnARqAEesnCLbJVXPLxx'
 app.config['MYSQL_DB'] = 'BD_SUGARRUSH'
 
 db = ConexionDB(
